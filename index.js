@@ -64,7 +64,7 @@ async function main() {
 }
 
 
- 
+
   
 app.use(sessionOptions);
 app.use(flash());
@@ -76,6 +76,9 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+  app.get("/",(req,res)=>{
+    res.redirect("/listings");
+  })
 
   // middleware for flash
   app.use((req,res,next)=>{
