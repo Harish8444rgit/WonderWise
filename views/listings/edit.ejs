@@ -33,9 +33,12 @@
         Please provide some description.
       </div>
     </div>
-
     <div class="mb-3">
-      <label for="Image Url" claas="form-lable">Upload Listing Image: </label>
+      <p >Orignal Listing Image: </p>
+     <img src="<%= orignalImg %>" alt="Preview image" class="previewImg">
+    </div>
+    <div class="mb-3">
+      <label for="Image Url" claas="form-lable">Upload NewListing Image: </label>
       <input
         type="file"
         placeholder="enter image url"
@@ -43,7 +46,7 @@
         class="form-control"
       />
       <div class="invalid-feedback">
-        Please provide valid image Link.
+        Please provide valid type png, jpg, jpeg image .
       </div>
     </div>
     <div class="mb-3">
