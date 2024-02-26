@@ -95,18 +95,25 @@
     <h3>Where you'll be</h3>
     <div id="map"></div>
    </div>
+   
    </div>
+</div>
 
-    
-</div>
-</div>
 <script>
+    const coordinates= JSON.parse(`<%-JSON.stringify(listing.geometry.coordinates) %>`);
   const mapToken="<%= process.env.map_api_key%>"
   maptilersdk.config.apiKey = mapToken;
   const map = new maptilersdk.Map({
     container: 'map', 
     style: maptilersdk.MapStyle.STREETS,
-    center: [72.854118, 19.228825], 
+    center: coordinates, 
     zoom: 14, 
   });
+ // adding marker on map
+ 
+const marker = new maptilersdk.Marker({
+    color: "	#FF0000",//red
+    draggable: true
+  }).setLngLat(coordinates)
+  .addTo(map);
 </script>
