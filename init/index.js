@@ -4,9 +4,11 @@ const Listing = require("../model/listing.js");
 const axios = require("axios");
 const path = require("path");
 const fs = require("fs");
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
 
-
-const Mongo_url ="mongodb+srv://harishyadav8779:MhDDNA0AigMKAapM@wonderwise.3zrvc4n.mongodb.net/?"
+const Mongo_url =process.env.clouddb_url
 main()
   .then((res) => {
     console.log("connection successfull");
